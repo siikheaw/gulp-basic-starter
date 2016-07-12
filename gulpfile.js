@@ -29,10 +29,16 @@ var prod = false,
     vendorPath + '/jquery/dist/jquery.js',
   ];
 
+
 /**
- * -- Jade --
- * Compile jade template to Html
+ * -- Tasks --
  * ------------------------------
+**/
+
+/**
+ * - Jade -
+ * Compile jade template to Html
+ * not a default task
  * uncomment to use
 **/
 //gulp.task('jade', function() {
@@ -43,13 +49,9 @@ var prod = false,
 //    .pipe(gulp.dest('layouts/jade')); // tell gulp our output folder
 //});
 
-
-
-
 /**
- * -- Stylus --
+ * - Stylus -
  * Compile stylus files from [src/styl] to [static/css]
- * ------------------------------
 **/
 gulp.task('styl', function () {
   /* Postcss */
@@ -78,10 +80,9 @@ gulp.task('styl', function () {
 });
 
 /**
- * -- Sass --
- * ** Not a default task ** 
- * ** uncomment to use **
- * ------------------------------
+ * - Sass -
+ * not a default task
+ * uncomment to use
 **/
 
 //gulp.task('sass', function () {
@@ -91,9 +92,8 @@ gulp.task('styl', function () {
 //});
 
 /**
- * --- Js ---
+ * - Js -
  * Concat compress js
- * ------------------------------
 **/
 gulp.task('js', function() {
   return gulp.src(basePath + '/js/**/*.js')
@@ -117,6 +117,7 @@ gulp.task('js:vendor', function() {
 
 
 /**
+ * - Watch -
  * Watch styl and js files for changes & recompile
  * Watch img files for changes & recompile
  */
@@ -132,7 +133,8 @@ gulp.task('watch', function () {
 });
 
 /**
- * Default task, running just `gulp` will compile the sass,
+ * Default task, running just `gulp` 
+ * will compile the sass,
  * ------------------------------
 **/
 gulp.task('default', ['watch']);
